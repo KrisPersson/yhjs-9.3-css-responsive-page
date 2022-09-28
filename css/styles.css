@@ -13,12 +13,13 @@ body {
 .wrapper {
     display: grid;
     grid-template-columns: 100%;
-    grid-auto-rows: auto;
+    grid-template-rows: minmax(4rem, 10%) auto;
     grid-template-areas: 
     "header"
     "main";
     max-width: 1000px;
     margin: 0 auto;
+    min-height: 100%;
 }
 
 a {
@@ -27,7 +28,6 @@ a {
     padding: 0.5rem;
     font-size: 1.5rem;
 }
-
 
 a:hover {
     text-decoration: underline;
@@ -58,16 +58,8 @@ p {
     max-width: 17rem;
 }
 
-img {
-    width: 100%;
-}
-
 nav {
     grid-area: header;
-    /* display: flex;
-    justify-content: flex-s;
-    align-items: center; */
-    /* padding-bottom: 1rem; */
     position: relative;
     max-height: 5rem;
 }
@@ -76,6 +68,7 @@ main {
     grid-area: main;
     display: flex;
     flex-flow: column;
+    align-items: center;
     max-width: 1000px;
 
 }
@@ -93,15 +86,12 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
 
-    min-width: 100%;
-    min-height: 130%;
+    width: 100%;
+    max-width: 450px;
+    height: 100vw;
+    max-height: 450px;
+    align-self: flex-end;
 }
-
-.main__section-1, .main__section-2 {
-
-}
-
-
 
 /* 
     Hamburger-Menu
@@ -156,17 +146,17 @@ li {
  }
 
 
+/* MEDIA QUERIES */
 
-
- @media screen and (min-width: 650px) {
+ @media screen and (min-width: 968px) {
 
 main {
     flex-flow: row nowrap;
     justify-content: space-around;
+    align-items:flex-start;
 }
 
 .main__section-1 {
-    align-self: flex-end;
     max-width: 30%;
     min-width: 30%;
     padding: 2rem 0;
@@ -176,29 +166,15 @@ main {
 
 .main__section-2 {
     background-image: url(../images/undraw_pet_adoption_desktop.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    min-width: 60%;
-    max-width: 60%;
-    min-height: 150%;
-
-    margin-left: 4rem;
+    max-width: 50%;
+    min-height: 50%;
+    align-self: unset;
 }
-
-
-
 
 /* 
     Hamburger-Menu
 */
     .fas.fa-bars, input[type="checkbox"] {
-        /* position: absolute;
-        margin-top: 2.5rem;
-        margin-left: 2rem;
-        right: 2rem;
-        top: 0.5rem; */
-
         display: none;
       }
 
@@ -215,8 +191,6 @@ main {
 
      a {
         font-size: 1rem;
-        color: #0C1B33;
-        text-decoration: none;
         padding: 1.5rem;
      }
       
